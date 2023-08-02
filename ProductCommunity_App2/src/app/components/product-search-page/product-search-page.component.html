@@ -1,0 +1,61 @@
+<div class="container">
+  <a routerLink="" class="back" type="reset" mat-raised-button color="accent">
+    Logout
+  </a>
+  <div class="card">
+    <form
+      [formGroup]="productForm"
+      (ngSubmit)="searchProducts()"
+      class="example-form"
+    >
+      <h1>Search Products</h1>
+
+      <mat-radio-group formControlName="searchOption">
+        <mat-radio-button value="name">Name</mat-radio-button>
+        <mat-radio-button value="code">Product Code</mat-radio-button>
+        <mat-radio-button value="brand">Brand</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field class="example-full-width field" appearance="outline">
+        <mat-label>Enter Search Query</mat-label>
+        <input
+          type="text"
+          class="form-control"
+          id="searchQuery"
+          name="searchQuery"
+          formControlName="searchQuery"
+          matInput
+          [placeholder]="getPlaceholder()"
+        />
+        <mat-error
+          class="error"
+          *ngIf="
+            productForm.controls['searchQuery'].invalid &&
+            productForm.controls['searchQuery'].touched
+          "
+        >
+          Search query is required
+        </mat-error>
+      </mat-form-field>
+
+      <div class="text-center">
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="productForm.invalid"
+        >
+          Search
+        </button>
+        <button
+          type="reset"
+          mat-raised-button
+          color="accent"
+          (click)="clearSearch()"
+        >
+          Clear
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

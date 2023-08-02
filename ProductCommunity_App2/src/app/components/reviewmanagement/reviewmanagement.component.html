@@ -1,0 +1,45 @@
+<a
+  routerLink="/adminlogin"
+  class="back"
+  type="reset"
+  mat-raised-button
+  color="accent"
+>
+  Logout
+</a>
+<div class="container">
+  <h2>New Reviews</h2>
+  <div class="card">
+    <ul>
+      <li *ngFor="let review of newReviews">
+        <div class="product">
+          <div><strong>Product Name:</strong> {{ review.product.name }}</div>
+          <div><strong>Brand:</strong> {{ review.product.brand }}</div>
+          <div>
+            <strong>Product Code:</strong> {{ review.product.productCode }}
+          </div>
+          <div><strong>Review Id:</strong> {{ review.id }}</div>
+          <div><strong>Rating:</strong> {{ review.rating }}</div>
+          <div><strong>Comment:</strong> {{ review.comment }}</div>
+          <div><strong>Approved:</strong> {{ review.approved }}</div>
+        </div>
+        <div class="approve-reject-buttons">
+          <button
+            mat-raised-button
+            class="approve-button"
+            (click)="approveReview(review)"
+          >
+            Approve
+          </button>
+          <button
+            mat-raised-button
+            class="reject-button"
+            (click)="rejectReview(review)"
+          >
+            Reject
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

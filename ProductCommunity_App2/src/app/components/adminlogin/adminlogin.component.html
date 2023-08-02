@@ -1,0 +1,60 @@
+<div class="container">
+  <a routerLink="" class="back" type="reset" mat-raised-button color="accent">
+    Back
+  </a>
+  <div class="card">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="example-form">
+      <h1>Enter Admin Login Credentials :</h1>
+      <mat-form-field class="example-full-width field" appearance="outline">
+        <mat-label>Enter Username</mat-label>
+        <input
+          type="email"
+          class="form-control"
+          id="uname"
+          name="uname"
+          formControlName="uname"
+          matInput
+          placeholder="Ex. ricardo@gmail.com"
+        />
+        <mat-error class="error" *ngIf="uname?.invalid && uname?.touched">
+          Username is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width field" appearance="outline">
+        <mat-label>Enter Password</mat-label>
+        <input
+          type="password"
+          class="form-control"
+          id="pass"
+          name="pass"
+          formControlName="pass"
+          matInput
+        />
+        <mat-error class="error" *ngIf="pass?.invalid && pass?.touched">
+          Password is required
+        </mat-error>
+      </mat-form-field>
+      <div class="text-center">
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="loginForm.invalid"
+        >
+          Submit
+        </button>
+        <button
+          type="reset"
+          mat-raised-button
+          color="accent"
+          (click)="clearForm()"
+        >
+          Clear
+        </button>
+      </div>
+      <div class="text-center">
+        <a class="existingacc" href="/login">Login as user?</a>
+      </div>
+    </form>
+  </div>
+</div>

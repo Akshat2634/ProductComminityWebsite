@@ -1,0 +1,133 @@
+h2 {
+  padding-top: 30px;
+  padding-right: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  background-color: #2a72c4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.card h1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card button {
+  margin-top: 20px;
+}
+
+.card a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.user-icon {
+  margin-right: 10px;
+}
+
+.text-center {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-button,
+.login-button {
+  margin-top: 10px;
+}
+
+.stats {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #01579b;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: fit-content;
+  height: auto;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stats h2 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.stat-icon-container {
+  background-color: #e0e0e0;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.stat-details {
+  margin-left: 15px;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.stat-value {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.delivery {
+  position: absolute;
+  top: 140px;
+  right: 50px;
+}
+.tshirt {
+  position: absolute;
+  top: 150px;
+  left: 50px;
+}
+
+.ecommerce {
+  position: absolute;
+  left: 50px;
+}
+.shopping {
+  position: absolute;
+  right: 50px;
+  bottom: 115px;
+}

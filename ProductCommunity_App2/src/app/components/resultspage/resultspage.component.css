@@ -1,0 +1,116 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.logout {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.logout:hover {
+  background-color: #e45555;
+}
+
+.card {
+  background-color: #4fc3f7;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+}
+
+.no-results {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+  margin-top: 20px;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  height: 36px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.clear-filter-button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #3a9dc4;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+.clear-filter-button:hover {
+  background-color: #6ecfe0;
+}
+
+.product {
+  background-color: #b3e5fc;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.rating-stars {
+  color: #ffff00; /* Set the color of the stars, e.g., gold */
+  font-size: 22px;
+  padding-left: 5px;
+}
+.view-details-button {
+  padding: 6px 8px;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-button:hover {
+  background-color: #1976d2;
+}

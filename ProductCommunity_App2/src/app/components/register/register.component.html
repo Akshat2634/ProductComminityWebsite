@@ -1,0 +1,134 @@
+<div class="container">
+  <a routerLink="" class="back" type="reset" mat-raised-button color="accent">
+    Back
+  </a>
+  <div class="card">
+    <form
+      [formGroup]="registrationForm"
+      (ngSubmit)="register()"
+      class="example-form"
+    >
+      <h1>Register with Email and Password:</h1>
+      <mat-form-field class="example-full-width field" appearance="outline">
+        <mat-label>Enter Username(Email Id)</mat-label>
+        <input
+          type="email"
+          class="form-control"
+          id="uname"
+          name="uname"
+          formControlName="uname"
+          matInput
+          placeholder="Ex. ricardo@gmail.com"
+          required
+        />
+        <mat-error class="error" *ngIf="uname?.invalid && uname?.touched">
+          <ng-container *ngIf="uname?.hasError('required')">
+            Username is required
+          </ng-container>
+          <ng-container
+            *ngIf="uname?.hasError('email') && !uname?.hasError('required')"
+          >
+            Invalid email format
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td class="form-cell">
+            <mat-form-field
+              class="example-full-width field"
+              appearance="outline"
+            >
+              <mat-label>Enter First Name</mat-label>
+              <input
+                type="fname"
+                class="form-control"
+                id="fname"
+                name="fname"
+                formControlName="fname"
+                matInput
+                placeholder="Ex. Ricardo"
+              />
+              <mat-error class="error" *ngIf="fname?.invalid && fname?.touched">
+                First Name is required
+              </mat-error>
+            </mat-form-field>
+          </td>
+          <td class="form-cell">
+            <mat-form-field
+              class="example-full-width field"
+              appearance="outline"
+            >
+              <mat-label>Enter Last Name</mat-label>
+              <input
+                type="lname"
+                class="form-control"
+                id="lname"
+                name="lname"
+                formControlName="lname"
+                matInput
+                placeholder="Ex. Walker"
+              />
+              <mat-error class="error" *ngIf="lname?.invalid && lname?.touched">
+                Last Name is required
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <mat-form-field class="example-full-width field" appearance="outline">
+        <mat-label>Enter Password</mat-label>
+        <input
+          type="password"
+          class="form-control"
+          id="pass"
+          name="pass"
+          formControlName="pass"
+          matInput
+        />
+        <mat-error class="error" *ngIf="pass?.invalid && pass?.touched">
+          Password is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width field" appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input
+          type="password"
+          class="form-control"
+          id="confirmPass"
+          name="confirmPass"
+          formControlName="confirmPass"
+          matInput
+        />
+        <mat-error
+          class="error"
+          *ngIf="confirmPass?.invalid && confirmPass?.touched"
+        >
+          Confirm Password is required and should match the Password
+        </mat-error>
+      </mat-form-field>
+      <div class="text-center">
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="registrationForm.invalid"
+        >
+          Submit
+        </button>
+        <!-- <label *ngIf="error" style="color: red">Wrong Details</label> -->
+        <button
+          type="reset"
+          mat-raised-button
+          color="accent"
+          (click)="clearForm()"
+        >
+          Clear
+        </button>
+      </div>
+      <div class="text-center">
+        <a class="existingacc" href="/login">Have an account already?</a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<a routerLink="/productsearch" class="back">Back</a>
+<div class="container">
+  <h1>Product Details:</h1>
+  <div class="card">
+    <div *ngIf="product">
+      <p><strong>Name:</strong> {{ product.name }}</p>
+      <p><strong>Product Code:</strong> {{ product.productCode }}</p>
+      <p><strong>Brand:</strong> {{ product.brand }}</p>
+      <div class="average-ratings">
+        <strong>Average Ratings:</strong>
+        <span class="rating-stars">
+          {{ displayStarRating(calculateAverageRatings(product.reviews)) }}
+        </span>
+      </div>
+      <p><strong>Number of Reviews:</strong> {{ getApprovedReviewsCount() }}</p>
+
+      <button
+        class="add-review-btn"
+        mat-raised-button
+        (click)="navigateToAddReview()"
+      >
+        Add Review
+      </button>
+      <h2>Reviews:</h2>
+      <button
+        mat-raised-button
+        class="toggle-reviews-btn"
+        (click)="toggleReviews()"
+      >
+        {{ showReviews ? "Hide Reviews" : "Ask For Reviews" }}
+      </button>
+      <ul *ngIf="showReviews">
+        <li *ngFor="let review of product.reviews">
+          <ng-container *ngIf="review.approved">
+            <div class="review">
+              <p class="review-id">Review ID: {{ review.id }}</p>
+              <p class="rating">
+                Rating: {{ displayStarRating(review.rating) }}
+              </p>
+              <p class="comment">Comment: {{ review.comment }}</p>
+              <p class="comment">Approved: {{ review.approved }}</p>
+            </div>
+          </ng-container>
+        </li>
+      </ul>
+      <p class="no-reviews" *ngIf="product.reviews.length === 0">
+        No reviews available.
+      </p>
+    </div>
+  </div>
+  <div *ngIf="!product">
+    <p class="loading">Loading product details...</p>
+  </div>
+</div>

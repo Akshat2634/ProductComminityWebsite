@@ -1,0 +1,97 @@
+<body>
+  <div class="container">
+    <div class="card">
+      <img
+        class="user-icon"
+        src="https://img.icons8.com/ios/50/user-male-circle--v1.png"
+        alt="User Icon"
+      />
+      <div class="text-center">
+        <a
+          class="register-button"
+          routerLink="/register"
+          mat-raised-button
+          color="primary"
+          >Register</a
+        >
+        <a
+          class="login-button"
+          routerLink="/login"
+          mat-raised-button
+          color="primary"
+          >Login</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="stats">
+    <h2>Statistics</h2>
+    <div class="stat-item">
+      <div class="stat-icon-container">
+        <img
+          src="https://img.icons8.com/plasticine/100/user-male-circle.png"
+          alt="User Circle"
+          class="stat-icon"
+        />
+      </div>
+      <div class="stat-details">
+        <p class="stat-label">Total Users</p>
+        <p class="stat-value">{{ stats?.userCount }}</p>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon-container">
+        <img
+          src="https://img.icons8.com/plasticine/100/shopping-cart.png"
+          alt="Shopping Cart"
+          class="stat-icon"
+        />
+      </div>
+      <div class="stat-details">
+        <p class="stat-label">Total Products</p>
+        <p class="stat-value">{{ stats?.productCount }}</p>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon-container">
+        <img
+          src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/external-Customer-Reviews-customers-reviews-smashingstocks-flat-smashing-stocks-4.png"
+          alt="Customer Reviews"
+          class="stat-icon"
+        />
+      </div>
+      <div class="stat-details">
+        <p class="stat-label">Total Reviews</p>
+        <p class="stat-value">{{ stats?.reviewCount }}</p>
+      </div>
+    </div>
+  </div>
+  <img
+    class="delivery"
+    width="64"
+    height="64"
+    src="https://img.icons8.com/external-filled-outline-satawat-anukul/64/external-ecommerce-ecommercefilled-outline-filled-outline-satawat-anukul-9.png"
+    alt="external-ecommerce-ecommercefilled-outline-filled-outline-satawat-anukul-9"
+  />
+  <img
+    class="tshirt"
+    width="64"
+    height="64"
+    src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/64/external-ecommerce-ecommerce-kmg-design-detailed-outline-kmg-design-5.png"
+    alt="external-ecommerce-ecommerce-kmg-design-detailed-outline-kmg-design-5"
+  />
+  <img
+    class="ecommerce"
+    width="64"
+    height="64"
+    src="https://img.icons8.com/cotton/64/online-store.png"
+    alt="online-store"
+  />
+  <img
+    class="shopping"
+    width="64"
+    height="64"
+    src="https://img.icons8.com/cotton/64/online-order.png"
+    alt="online-order"
+  />
+</body>

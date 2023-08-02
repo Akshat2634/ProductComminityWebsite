@@ -1,0 +1,56 @@
+<div class="container">
+  <a
+    routerLink="/productsearch"
+    class="logout"
+    type="reset"
+    mat-raised-button
+    color="accent"
+  >
+    Back
+  </a>
+  <h1>Search Results:</h1>
+  <div class="filter-section">
+    <input
+      type="text"
+      [(ngModel)]="filterQuery"
+      placeholder="Filter by Name, Code, or Brand"
+      (input)="applyFilter()"
+    />
+    <button class="clear-filter-button" (click)="clearFilter()">
+      Clear Filter
+    </button>
+  </div>
+  <div class="card" *ngIf="filteredResults.length > 0">
+    <ul>
+      <li *ngFor="let result of filteredResults">
+        <div class="product">
+          <p><strong>Name:</strong> {{ result.name }}</p>
+          <p><strong>Product Code:</strong> {{ result.productCode }}</p>
+          <p><strong>Brand:</strong> {{ result.brand }}</p>
+          <p>
+            <strong>Average Rating:</strong>
+            <span class="rating-stars">{{
+              getRatingStars(calculateAverageRating(result.reviews))
+            }}</span>
+          </p>
+          <p>
+            <strong>Number of Reviews:</strong>
+            {{ getApprovedReviewsCount(result.reviews) }}
+          </p>
+          <div>
+            <button
+              mat-raised-button
+              class="view-details-button"
+              (click)="navigateToProductDetails(result.productCode)"
+            >
+              View Product Details
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="card" *ngIf="filteredResults.length === 0">
+    <p>No products found.</p>
+  </div>
+</div>
